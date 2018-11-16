@@ -26,6 +26,18 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        EMPRESA = new javax.swing.JDialog();
+        NOMBRE = new javax.swing.JLabel();
+        id_empre = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        logout = new javax.swing.JButton();
+        crear_empleado = new javax.swing.JButton();
+        crea_empresa = new javax.swing.JDialog();
+        crea_emplea = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         id_empre_main = new javax.swing.JTextField();
@@ -33,6 +45,94 @@ public class Principal extends javax.swing.JFrame {
         entrar_main = new javax.swing.JButton();
         Crea_empresa_main = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+
+        NOMBRE.setText("jLabel4");
+
+        id_empre.setText("jLabel4");
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("empresa");
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jTree1);
+
+        jLabel4.setText("lista de empleados");
+
+        jScrollPane2.setViewportView(jList1);
+
+        logout.setText("LogOut");
+
+        crear_empleado.setText("Crear Empleado");
+
+        javax.swing.GroupLayout EMPRESALayout = new javax.swing.GroupLayout(EMPRESA.getContentPane());
+        EMPRESA.getContentPane().setLayout(EMPRESALayout);
+        EMPRESALayout.setHorizontalGroup(
+            EMPRESALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EMPRESALayout.createSequentialGroup()
+                .addGroup(EMPRESALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EMPRESALayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(id_empre, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(EMPRESALayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(EMPRESALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(EMPRESALayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(30, 30, 30)
+                                .addComponent(crear_empleado))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(98, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EMPRESALayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(logout)
+                .addGap(186, 186, 186))
+        );
+        EMPRESALayout.setVerticalGroup(
+            EMPRESALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EMPRESALayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(EMPRESALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(id_empre, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                    .addComponent(NOMBRE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(EMPRESALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(EMPRESALayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addGap(2, 2, 2)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(EMPRESALayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(crear_empleado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(29, 29, 29)
+                .addComponent(logout)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout crea_empresaLayout = new javax.swing.GroupLayout(crea_empresa.getContentPane());
+        crea_empresa.getContentPane().setLayout(crea_empresaLayout);
+        crea_empresaLayout.setHorizontalGroup(
+            crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        crea_empresaLayout.setVerticalGroup(
+            crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout crea_empleaLayout = new javax.swing.GroupLayout(crea_emplea.getContentPane());
+        crea_emplea.getContentPane().setLayout(crea_empleaLayout);
+        crea_empleaLayout.setHorizontalGroup(
+            crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        crea_empleaLayout.setVerticalGroup(
+            crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,11 +236,23 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Crea_empresa_main;
+    private javax.swing.JDialog EMPRESA;
+    private javax.swing.JLabel NOMBRE;
+    private javax.swing.JDialog crea_emplea;
+    private javax.swing.JDialog crea_empresa;
+    private javax.swing.JButton crear_empleado;
     private javax.swing.JButton entrar_main;
+    private javax.swing.JLabel id_empre;
     private javax.swing.JTextField id_empre_main;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTree jTree1;
+    private javax.swing.JButton logout;
     private javax.swing.JTextField pin_empre_main;
     // End of variables declaration//GEN-END:variables
 }

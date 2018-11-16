@@ -20,8 +20,9 @@ public class Empresas {
     public Empresas() {
     }
 
-    public Empresas(String nombre, String capital, String fundacion, String ubicacion, int id, String PIN) {
+    public Empresas(String nombre, String tipo, String capital, String fundacion, String ubicacion, int id, String PIN) {
         this.nombre = nombre;
+        this.tipo = tipo;
         this.capital = capital;
         this.fundacion = fundacion;
         this.ubicacion = ubicacion;
@@ -35,6 +36,14 @@ public class Empresas {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getCapital() {
+        return capital;
+    }
+
+    public void setCapital(String capital) {
+        this.capital = capital;
     }
 
     public String getFundacion() {
@@ -69,9 +78,16 @@ public class Empresas {
         this.PIN = PIN;
     }
 
-    public String getCapital() {
-        return capital;
+    public String getTipo() {
+        return tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Empresas{" + "nombre=" + nombre + '}';
+    }
+
+    
     
     
 }

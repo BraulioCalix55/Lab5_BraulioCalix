@@ -29,8 +29,6 @@ public class empleados {
         this.desempe = desempe;
     }
 
-    
-
     public String getNombre() {
         return nombre;
     }
@@ -63,6 +61,18 @@ public class empleados {
         this.salario = salario;
     }
 
-    
-    
+    public void pago() {
+        if (desempe.equals("ingeniero")) {
+            salario = "22,000";
+        } else if (desempe.equals("medico")) {
+            salario = "18,000";
+        } else if (desempe.equals("estudiante")) {
+            salario = "7600";
+        } else if (desempe.equals("licenciado")) {
+            salario = "12,000";
+        } else if (desempe.equals("maestro")) {
+            salario = "2000";
+        }
+    }
+
 }
