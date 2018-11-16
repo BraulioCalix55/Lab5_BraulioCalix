@@ -37,7 +37,33 @@ public class Principal extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
         crear_empleado = new javax.swing.JButton();
         crea_empresa = new javax.swing.JDialog();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        nombre_empresa = new javax.swing.JTextField();
+        fecha_empresa = new com.toedter.calendar.JDateChooser();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        ubicacion = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        id_empresa = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        pin_empresa = new javax.swing.JTextField();
+        cb_empre = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         crea_emplea = new javax.swing.JDialog();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         id_empre_main = new javax.swing.JTextField();
@@ -112,26 +138,163 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
+        jLabel5.setText("CREAR EMPRESAS");
+
+        jLabel6.setText("nombre");
+
+        jLabel7.setText("Fecha");
+
+        jLabel8.setText("ubicacion de sucursal");
+
+        jLabel9.setText("ID");
+
+        jLabel10.setText("PIN acceso");
+
+        cb_empre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "pequeña", "mediana", "grande" }));
+
+        jLabel11.setText("tipo");
+
+        jButton1.setText("CREAR EMPRESA");
+
         javax.swing.GroupLayout crea_empresaLayout = new javax.swing.GroupLayout(crea_empresa.getContentPane());
         crea_empresa.getContentPane().setLayout(crea_empresaLayout);
         crea_empresaLayout.setHorizontalGroup(
             crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(crea_empresaLayout.createSequentialGroup()
+                .addGroup(crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(crea_empresaLayout.createSequentialGroup()
+                        .addGap(187, 187, 187)
+                        .addComponent(jLabel5))
+                    .addGroup(crea_empresaLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
+                        .addGap(33, 33, 33)
+                        .addGroup(crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cb_empre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fecha_empresa, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                            .addComponent(nombre_empresa)
+                            .addComponent(ubicacion)
+                            .addComponent(id_empresa)
+                            .addComponent(pin_empresa))))
+                .addContainerGap(206, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crea_empresaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(56, 56, 56))
         );
         crea_empresaLayout.setVerticalGroup(
             crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(crea_empresaLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel5)
+                .addGap(24, 24, 24)
+                .addGroup(crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(nombre_empresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fecha_empresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(37, 37, 37)
+                .addGroup(crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(ubicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(id_empresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(pin_empresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(crea_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_empre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
+
+        jLabel12.setText("CREAR EMPLEADO");
+
+        jLabel13.setText("NOMBRE");
+
+        jLabel14.setText("Fecha nacimiento");
+
+        jLabel15.setText("correo");
+
+        jLabel16.setText("tipo de empleado");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ingeniero", "medico", "estudiante", "licenciado", "maestro" }));
+
+        jLabel17.setText("cargo");
+
+        jButton2.setText("crear");
 
         javax.swing.GroupLayout crea_empleaLayout = new javax.swing.GroupLayout(crea_emplea.getContentPane());
         crea_emplea.getContentPane().setLayout(crea_empleaLayout);
         crea_empleaLayout.setHorizontalGroup(
             crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(crea_empleaLayout.createSequentialGroup()
+                .addGroup(crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(crea_empleaLayout.createSequentialGroup()
+                        .addGap(224, 224, 224)
+                        .addComponent(jLabel12))
+                    .addGroup(crea_empleaLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17))
+                        .addGap(59, 59, 59)
+                        .addGroup(crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(jTextField2)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField3)))
+                    .addGroup(crea_empleaLayout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addComponent(jButton2)))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         crea_empleaLayout.setVerticalGroup(
             crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(crea_empleaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addGap(27, 27, 27)
+                .addGroup(crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(crea_empleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(31, 31, 31))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -238,21 +401,47 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton Crea_empresa_main;
     private javax.swing.JDialog EMPRESA;
     private javax.swing.JLabel NOMBRE;
+    private javax.swing.JComboBox<String> cb_empre;
     private javax.swing.JDialog crea_emplea;
     private javax.swing.JDialog crea_empresa;
     private javax.swing.JButton crear_empleado;
     private javax.swing.JButton entrar_main;
+    private com.toedter.calendar.JDateChooser fecha_empresa;
     private javax.swing.JLabel id_empre;
     private javax.swing.JTextField id_empre_main;
+    private javax.swing.JTextField id_empresa;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTree jTree1;
     private javax.swing.JButton logout;
+    private javax.swing.JTextField nombre_empresa;
     private javax.swing.JTextField pin_empre_main;
+    private javax.swing.JTextField pin_empresa;
+    private javax.swing.JTextField ubicacion;
     // End of variables declaration//GEN-END:variables
 }
