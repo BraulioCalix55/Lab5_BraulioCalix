@@ -73,10 +73,21 @@ public class Principal extends javax.swing.JFrame {
         emplecargo = new javax.swing.JTextField();
         creaemple = new javax.swing.JButton();
         cliclista = new javax.swing.JPopupMenu();
-        eliminar = new javax.swing.JMenuItem();
         verdeta = new javax.swing.JMenuItem();
         modificar = new javax.swing.JMenuItem();
         contratar = new javax.swing.JMenuItem();
+        modifi = new javax.swing.JDialog();
+        modifec = new com.toedter.calendar.JDateChooser();
+        jLabel18 = new javax.swing.JLabel();
+        modico = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        modiemple = new javax.swing.JComboBox<>();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        modicargo = new javax.swing.JTextField();
+        modinom = new javax.swing.JTextField();
+        modi_emple = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         id_empre_main = new javax.swing.JTextField();
@@ -338,9 +349,6 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(31, 31, 31))
         );
 
-        eliminar.setText("eliminar");
-        cliclista.add(eliminar);
-
         verdeta.setText("ver detalles");
         verdeta.setToolTipText("");
         verdeta.addActionListener(new java.awt.event.ActionListener() {
@@ -351,6 +359,11 @@ public class Principal extends javax.swing.JFrame {
         cliclista.add(verdeta);
 
         modificar.setText("modificar");
+        modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarActionPerformed(evt);
+            }
+        });
         cliclista.add(modificar);
 
         contratar.setText("contratar");
@@ -360,6 +373,79 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         cliclista.add(contratar);
+
+        jLabel18.setText("correo");
+
+        jLabel19.setText("tipo de empleado");
+
+        modiemple.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ingeniero", "medico", "estudiante", "licenciado", "maestro" }));
+
+        jLabel20.setText("cargo");
+
+        jLabel21.setText("NOMBRE");
+
+        modi_emple.setText("modificar");
+        modi_emple.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modi_empleMouseClicked(evt);
+            }
+        });
+
+        jLabel22.setText("Fecha nacimiento");
+
+        javax.swing.GroupLayout modifiLayout = new javax.swing.GroupLayout(modifi.getContentPane());
+        modifi.getContentPane().setLayout(modifiLayout);
+        modifiLayout.setHorizontalGroup(
+            modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modifiLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(modifiLayout.createSequentialGroup()
+                        .addGroup(modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20))
+                        .addGap(59, 59, 59)
+                        .addGroup(modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(modinom)
+                            .addComponent(modifec, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(modico)
+                            .addComponent(modiemple, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(modicargo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(modifiLayout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(modi_emple)))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+        modifiLayout.setVerticalGroup(
+            modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modifiLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(modinom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22)
+                    .addComponent(modifec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(modico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(modiemple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(modifiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(modicargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(modi_emple)
+                .addGap(66, 66, 66))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -465,7 +551,7 @@ public class Principal extends javax.swing.JFrame {
         DefaultMutableTreeNode nodoempre;
         nodoempre = new DefaultMutableTreeNode(empre.get(sele));
         raiz.add(nodoempre);
-
+        
         if (entra == true) {
             EMPRESA.setModal(true);
             EMPRESA.pack();
@@ -503,7 +589,7 @@ public class Principal extends javax.swing.JFrame {
         }
         String pin = pin_empresa.getText();
         String tipod = (String) cb_empre.getSelectedItem();
-
+        
         try {
             empre.add(new Empresas(nom, tipo, pin, fecha, ubica, id, pin, emple));
         } catch (Exception e) {
@@ -534,7 +620,7 @@ public class Principal extends javax.swing.JFrame {
         } else if (decem.equals("maestro")) {
             salar = "2000";
         }
-
+        
         emple.add(new empleados(noom, fech, corre, salar, decem, cargo));
         JOptionPane.showMessageDialog(crea_emplea, "se creo de froma correcta");
         emplecargo.setText("");
@@ -587,6 +673,36 @@ public class Principal extends javax.swing.JFrame {
         }        // TODO add your handling code here:
     }//GEN-LAST:event_contratarActionPerformed
 
+    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
+        modifi.setModal(true);
+        modifi.pack();
+        modifi.setVisible(true);
+    }//GEN-LAST:event_modificarActionPerformed
+
+    private void modi_empleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modi_empleMouseClicked
+         DefaultListModel modelolista=(DefaultListModel)lista_empleados.getModel();
+         ((empleados)modelolista.get(lista_empleados.getSelectedIndex())).setNombre(modinom.getText());
+         ((empleados)modelolista.get(lista_empleados.getSelectedIndex())).setCargo(modicargo.getText());
+         ((empleados)modelolista.get(lista_empleados.getSelectedIndex())).setDesempe((String)modiemple.getSelectedItem());
+         ((empleados)modelolista.get(lista_empleados.getSelectedIndex())).setCorreo(modico.getText());
+         if (modiemple.getSelectedItem().equals("ingeniero")) {
+            ((empleados)modelolista.get(lista_empleados.getSelectedIndex())).setSalario("22000");
+        }
+         if (modiemple.getSelectedItem().equals("medico")) {
+            ((empleados)modelolista.get(lista_empleados.getSelectedIndex())).setSalario("18000");
+        }
+         if (modiemple.getSelectedItem().equals("estudiante")) {
+            ((empleados)modelolista.get(lista_empleados.getSelectedIndex())).setSalario("7600");
+        }
+         if (modiemple.getSelectedItem().equals("licenciado")) {
+            ((empleados)modelolista.get(lista_empleados.getSelectedIndex())).setSalario("12000");
+        }if (modiemple.getSelectedItem().equals("maestro")) {
+            ((empleados)modelolista.get(lista_empleados.getSelectedIndex())).setSalario("2000");
+        }
+         
+         
+    }//GEN-LAST:event_modi_empleMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -635,7 +751,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton crea_empresas;
     private javax.swing.JButton creaemple;
     private javax.swing.JButton crear_empleado;
-    private javax.swing.JMenuItem eliminar;
     private javax.swing.JTextField emplecargo;
     private javax.swing.JTextField emplecorrep;
     private com.toedter.calendar.JDateChooser empledate;
@@ -655,7 +770,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -667,7 +787,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> lista_empleados;
     private javax.swing.JButton logout;
+    private javax.swing.JButton modi_emple;
+    private javax.swing.JTextField modicargo;
+    private javax.swing.JTextField modico;
+    private javax.swing.JComboBox<String> modiemple;
+    private com.toedter.calendar.JDateChooser modifec;
+    private javax.swing.JDialog modifi;
     private javax.swing.JMenuItem modificar;
+    private javax.swing.JTextField modinom;
     private javax.swing.JTextField nombre_empresa;
     private javax.swing.JPasswordField pin_empre_main;
     private javax.swing.JTextField pin_empresa;
