@@ -30,10 +30,10 @@ public class Principal extends javax.swing.JFrame {
         NOMBRE = new javax.swing.JLabel();
         id_empre = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        Arbol_empresas = new javax.swing.JTree();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lista_empleados = new javax.swing.JList<>();
         logout = new javax.swing.JButton();
         crear_empleado = new javax.swing.JButton();
         crea_empresa = new javax.swing.JDialog();
@@ -77,16 +77,26 @@ public class Principal extends javax.swing.JFrame {
         id_empre.setText("jLabel4");
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("empresa");
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        Arbol_empresas.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(Arbol_empresas);
 
         jLabel4.setText("lista de empleados");
 
-        jScrollPane2.setViewportView(jList1);
+        jScrollPane2.setViewportView(lista_empleados);
 
         logout.setText("LogOut");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
+            }
+        });
 
         crear_empleado.setText("Crear Empleado");
+        crear_empleado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crear_empleadoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout EMPRESALayout = new javax.swing.GroupLayout(EMPRESA.getContentPane());
         EMPRESA.getContentPane().setLayout(EMPRESALayout);
@@ -304,8 +314,18 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setText("PIN de Acceso");
 
         entrar_main.setText("entrar");
+        entrar_main.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                entrar_mainMouseClicked(evt);
+            }
+        });
 
         Crea_empresa_main.setText("crear empresa");
+        Crea_empresa_main.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Crea_empresa_mainMouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("BIENVENIDO");
@@ -362,6 +382,33 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        // TODO add your handling code here:
+        EMPRESA.dispose();
+    }//GEN-LAST:event_logoutMouseClicked
+
+    private void entrar_mainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrar_mainMouseClicked
+        // TODO add your handling code here:
+        EMPRESA.setModal(true);
+        EMPRESA.pack();
+        EMPRESA.setVisible(true);
+    }//GEN-LAST:event_entrar_mainMouseClicked
+
+    private void Crea_empresa_mainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Crea_empresa_mainMouseClicked
+        // TODO add your handling code here:
+        crea_empresa.setModal(true);
+        crea_empresa.pack();
+        crea_empresa.setVisible(true);
+        
+    }//GEN-LAST:event_Crea_empresa_mainMouseClicked
+
+    private void crear_empleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crear_empleadoMouseClicked
+        crea_emplea.setModal(true);
+        crea_emplea.pack();
+        crea_emplea.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crear_empleadoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -398,6 +445,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTree Arbol_empresas;
     private javax.swing.JButton Crea_empresa_main;
     private javax.swing.JDialog EMPRESA;
     private javax.swing.JLabel NOMBRE;
@@ -431,13 +479,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JList<String> lista_empleados;
     private javax.swing.JButton logout;
     private javax.swing.JTextField nombre_empresa;
     private javax.swing.JTextField pin_empre_main;

@@ -85,7 +85,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTree" name="jTree1">
+            <Component class="javax.swing.JTree" name="Arbol_empresas">
               <Properties>
                 <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
                   <TreeModel code="empresa"/>
@@ -106,7 +106,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="jList1">
+            <Component class="javax.swing.JList" name="lista_empleados">
               <Properties>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                   <StringArray count="0"/>
@@ -122,11 +122,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="LogOut"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logoutMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="crear_empleado">
           <Properties>
             <Property name="text" type="java.lang.String" value="Crear Empleado"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="crear_empleadoMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -519,11 +525,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="entrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="entrar_mainMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Crea_empresa_main">
       <Properties>
         <Property name="text" type="java.lang.String" value="crear empresa"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Crea_empresa_mainMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>

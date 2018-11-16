@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,18 +19,23 @@ public class Empresas {
     private String ubicacion;
     private int id;//tiene que ser unico
     private String PIN;
+    private ArrayList<empleados> empleados;
 
     public Empresas() {
     }
 
-    public Empresas(String nombre, String tipo, String capital, String fundacion, String ubicacion, int id, String PIN) {
+    public Empresas(String nombre, String capital, String fundacion, String ubicacion, int id, String PIN, ArrayList<empleados> empleados) {
         this.nombre = nombre;
-        this.tipo = tipo;
         this.capital = capital;
         this.fundacion = fundacion;
         this.ubicacion = ubicacion;
         this.id = id;
         this.PIN = PIN;
+        this.empleados = empleados;
+    }
+
+    public String getTipo() {
+        return tipo;
     }
 
     public String getNombre() {
@@ -78,10 +86,24 @@ public class Empresas {
         this.PIN = PIN;
     }
 
-    public String getTipo() {
-        return tipo;
+    public ArrayList<empleados> getEmpleados() {
+        return empleados;
     }
 
+    public void setEmpleados(ArrayList<empleados> empleados) {
+        this.empleados = empleados;
+    }
+
+    public void valida(){
+        if (tipo.equals("pequeña")) {
+            capital="80,00";
+        }else if(tipo.equals("mediana")){
+        capital="120,000";
+        
+        }else if(tipo.equals("grande")){
+        capital="169,000";
+        }
+    }
     @Override
     public String toString() {
         return "Empresas{" + "nombre=" + nombre + '}';
