@@ -112,7 +112,7 @@ public class Empresas {
     }
     @Override
     public String toString() {
-        return "Empresas{" + "nombre=" + nombre + '}';
+        return  nombre ;
     }
 
     

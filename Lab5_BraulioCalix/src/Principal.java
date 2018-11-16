@@ -1,8 +1,11 @@
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -69,6 +72,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         emplecargo = new javax.swing.JTextField();
         creaemple = new javax.swing.JButton();
+        cliclista = new javax.swing.JPopupMenu();
+        eliminar = new javax.swing.JMenuItem();
+        verdeta = new javax.swing.JMenuItem();
+        modificar = new javax.swing.JMenuItem();
+        contratar = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         id_empre_main = new javax.swing.JTextField();
@@ -77,8 +85,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         pin_empre_main = new javax.swing.JPasswordField();
 
+        NOMBRE.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         NOMBRE.setText("jLabel4");
 
+        id_empre.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         id_empre.setText("jLabel4");
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("empresa");
@@ -88,6 +98,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setText("lista de empleados");
 
         lista_empleados.setModel(new DefaultListModel());
+        lista_empleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lista_empleadosMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(lista_empleados);
 
         logout.setText("LogOut");
@@ -323,6 +338,24 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(31, 31, 31))
         );
 
+        eliminar.setText("eliminar");
+        cliclista.add(eliminar);
+
+        verdeta.setText("ver detalles");
+        verdeta.setToolTipText("");
+        verdeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verdetaActionPerformed(evt);
+            }
+        });
+        cliclista.add(verdeta);
+
+        modificar.setText("modificar");
+        cliclista.add(modificar);
+
+        contratar.setText("contratar");
+        cliclista.add(contratar);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("id de la empresa");
@@ -399,7 +432,6 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
-
         EMPRESA.dispose();
     }//GEN-LAST:event_logoutMouseClicked
 
@@ -411,24 +443,29 @@ public class Principal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "no ingreso numeros");
         }
-
         String pin = pin_empre_main.getText();
         boolean entra = false;
+        int sele = 0;
         for (int i = 0; i < empre.size(); i++) {
             if (id == empre.get(i).getId() && pin.equals(empre.get(i).getPIN())) {
+                sele = i;
                 entra = true;
-                p=empre.get(i);
+                p = empre.get(i);
                 NOMBRE.setText(empre.get(i).getNombre());
-                id_empre.setText("ID "+empre.get(i).getId());
+                id_empre.setText("ID " + empre.get(i).getId());
             }
         }
+        DefaultTreeModel m = (DefaultTreeModel) Arbol_empresas.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode nodoempre;
+        nodoempre = new DefaultMutableTreeNode(empre.get(sele));
+        raiz.add(nodoempre);
+
         if (entra == true) {
             EMPRESA.setModal(true);
             EMPRESA.pack();
             EMPRESA.setVisible(true);
         }
-        
-        
         id_empre_main.setText("");
         pin_empre_main.setText("");
         if (entra == false) {
@@ -461,6 +498,7 @@ public class Principal extends javax.swing.JFrame {
         }
         String pin = pin_empresa.getText();
         String tipod = (String) cb_empre.getSelectedItem();
+
         try {
             empre.add(new Empresas(nom, tipo, pin, fecha, ubica, id, pin, emple));
         } catch (Exception e) {
@@ -480,6 +518,18 @@ public class Principal extends javax.swing.JFrame {
         String cargo = emplecargo.getText();
         String decem = (String) cb_empre.getSelectedItem();
         String salar = "";
+        if (decem.equals("ingeniero")) {
+            salar = "22,000";
+        } else if (decem.equals("medico")) {
+            salar = "18,000";
+        } else if (decem.equals("estudiante")) {
+            salar = "7600";
+        } else if (decem.equals("licenciado")) {
+            salar = "12,000";
+        } else if (decem.equals("maestro")) {
+            salar = "2000";
+        }
+
         emple.add(new empleados(noom, fech, corre, salar, decem, cargo));
         JOptionPane.showMessageDialog(crea_emplea, "se creo de froma correcta");
         emplecargo.setText("");
@@ -492,11 +542,24 @@ public class Principal extends javax.swing.JFrame {
         crea_emplea.dispose();
     }//GEN-LAST:event_creaempleMouseClicked
 
+    private void lista_empleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lista_empleadosMouseClicked
+        // TODO add your handling code here:
+        if (lista_empleados.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                cliclista.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        }
+
+    }//GEN-LAST:event_lista_empleadosMouseClicked
+
+    private void verdetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verdetaActionPerformed
+        int pos=lista_empleados.getSelectedIndex();
+        JOptionPane.showMessageDialog(EMPRESA, emple.get(pos).detalles());
+    }//GEN-LAST:event_verdetaActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -535,11 +598,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog EMPRESA;
     private javax.swing.JLabel NOMBRE;
     private javax.swing.JComboBox<String> cb_empre;
+    private javax.swing.JPopupMenu cliclista;
+    private javax.swing.JMenuItem contratar;
     private javax.swing.JDialog crea_emplea;
     private javax.swing.JDialog crea_empresa;
     private javax.swing.JButton crea_empresas;
     private javax.swing.JButton creaemple;
     private javax.swing.JButton crear_empleado;
+    private javax.swing.JMenuItem eliminar;
     private javax.swing.JTextField emplecargo;
     private javax.swing.JTextField emplecorrep;
     private com.toedter.calendar.JDateChooser empledate;
@@ -571,10 +637,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> lista_empleados;
     private javax.swing.JButton logout;
+    private javax.swing.JMenuItem modificar;
     private javax.swing.JTextField nombre_empresa;
     private javax.swing.JPasswordField pin_empre_main;
     private javax.swing.JTextField pin_empresa;
     private javax.swing.JTextField ubicacion;
+    private javax.swing.JMenuItem verdeta;
     // End of variables declaration//GEN-END:variables
     ArrayList<Empresas> empre = new ArrayList();
     ArrayList<empleados> emple = new ArrayList();

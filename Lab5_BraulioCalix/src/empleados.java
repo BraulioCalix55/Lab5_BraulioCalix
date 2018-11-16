@@ -29,6 +29,7 @@ public class empleados {
         this.salario = salario;
         this.desempe = desempe;
         this.cargo = cargo;
+        
     }
 
     public String getDesempe() {
@@ -46,6 +47,7 @@ public class empleados {
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
+
     public String getNombre() {
         return nombre;
     }
@@ -77,24 +79,14 @@ public class empleados {
     public void setSalario(String salario) {
         this.salario = salario;
     }
-
-    public void pago() {
-        if (desempe.equals("ingeniero")) {
-            salario = "22,000";
-        } else if (desempe.equals("medico")) {
-            salario = "18,000";
-        } else if (desempe.equals("estudiante")) {
-            salario = "7600";
-        } else if (desempe.equals("licenciado")) {
-            salario = "12,000";
-        } else if (desempe.equals("maestro")) {
-            salario = "2000";
-        }
-    }
+    
 
     @Override
     public String toString() {
-        return nombre ;
+        return nombre;
     }
 
+    public String detalles() {
+        return "nombre: "+nombre+" \nfecha: "+fecha+"\ncorreo: "+correo+"\nsalario: "+salario+"\ncargo: "+cargo+"\ntipo de empleado: "+desempe;
+    }
 }
