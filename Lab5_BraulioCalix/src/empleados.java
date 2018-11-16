@@ -32,6 +32,12 @@ public class empleados {
         
     }
 
+    public empleados(String nombre, String salario, String cargo) {
+        this.nombre = nombre;
+        this.salario = salario;
+        this.cargo = cargo;
+    }
+
     public String getDesempe() {
         return desempe;
     }

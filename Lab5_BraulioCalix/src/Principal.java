@@ -354,6 +354,11 @@ public class Principal extends javax.swing.JFrame {
         cliclista.add(modificar);
 
         contratar.setText("contratar");
+        contratar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contratarActionPerformed(evt);
+            }
+        });
         cliclista.add(contratar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -553,9 +558,34 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_lista_empleadosMouseClicked
 
     private void verdetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verdetaActionPerformed
-        int pos=lista_empleados.getSelectedIndex();
+        int pos = lista_empleados.getSelectedIndex();
         JOptionPane.showMessageDialog(EMPRESA, emple.get(pos).detalles());
+
     }//GEN-LAST:event_verdetaActionPerformed
+
+    private void contratarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contratarActionPerformed
+        if (lista_empleados.getSelectedIndex() >= 0) {
+            DefaultTreeModel modeloarb = (DefaultTreeModel) Arbol_empresas.getModel();
+            DefaultMutableTreeNode raiz
+                    = (DefaultMutableTreeNode) modeloarb.getRoot();
+            DefaultListModel modeloLISTA = (DefaultListModel) lista_empleados.getModel();
+            String salario, nombre, cargo;
+
+            //nombre, String salario, String cargo
+            cargo = ((empleados) modeloLISTA.get(lista_empleados.getSelectedIndex())).getCargo();
+            nombre = ((empleados) modeloLISTA.get(lista_empleados.getSelectedIndex())).getNombre();
+            salario = ((empleados) modeloLISTA.get(lista_empleados.getSelectedIndex())).getSalario();
+            int cent = -1;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new empleados(nombre, salario, cargo));
+                ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                cent = 1;
+            }
+            modeloarb.reload();
+        } else {
+            JOptionPane.showMessageDialog(this, "no hay persona seleccionada");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_contratarActionPerformed
 
     /**
      * @param args the command line arguments
