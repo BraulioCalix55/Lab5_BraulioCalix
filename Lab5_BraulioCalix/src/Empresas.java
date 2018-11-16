@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,7 +16,7 @@ public class Empresas {
     private String nombre;
     private String tipo;
     private String capital;
-    private String fundacion;
+    private Date fundacion;
     private String ubicacion;
     private int id;//tiene que ser unico
     private String PIN;
@@ -24,8 +25,9 @@ public class Empresas {
     public Empresas() {
     }
 
-    public Empresas(String nombre, String capital, String fundacion, String ubicacion, int id, String PIN, ArrayList<empleados> empleados) {
+    public Empresas(String nombre, String tipo, String capital, Date fundacion, String ubicacion, int id, String PIN, ArrayList<empleados> empleados) {
         this.nombre = nombre;
+        this.tipo = tipo;
         this.capital = capital;
         this.fundacion = fundacion;
         this.ubicacion = ubicacion;
@@ -33,6 +35,16 @@ public class Empresas {
         this.PIN = PIN;
         this.empleados = empleados;
     }
+
+    public Date getFundacion() {
+        return fundacion;
+    }
+
+    public void setFundacion(Date fundacion) {
+        this.fundacion = fundacion;
+    }
+
+   
 
     public String getTipo() {
         return tipo;
@@ -54,13 +66,7 @@ public class Empresas {
         this.capital = capital;
     }
 
-    public String getFundacion() {
-        return fundacion;
-    }
-
-    public void setFundacion(String fundacion) {
-        this.fundacion = fundacion;
-    }
+    
 
     public String getUbicacion() {
         return ubicacion;

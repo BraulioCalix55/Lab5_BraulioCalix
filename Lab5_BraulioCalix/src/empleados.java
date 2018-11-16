@@ -17,18 +17,35 @@ public class empleados {
     private String correo;
     private String salario;
     private String desempe;
+    private String cargo;
 
     public empleados() {
     }
 
-    public empleados(String nombre, Date fecha, String correo, String salario, String desempe) {
+    public empleados(String nombre, Date fecha, String correo, String salario, String desempe, String cargo) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.correo = correo;
         this.salario = salario;
         this.desempe = desempe;
+        this.cargo = cargo;
     }
 
+    public String getDesempe() {
+        return desempe;
+    }
+
+    public void setDesempe(String desempe) {
+        this.desempe = desempe;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -73,6 +90,11 @@ public class empleados {
         } else if (desempe.equals("maestro")) {
             salario = "2000";
         }
+    }
+
+    @Override
+    public String toString() {
+        return nombre ;
     }
 
 }
